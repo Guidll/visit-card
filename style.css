@@ -1,0 +1,137 @@
+@charset 'UTF-8';
+
+*{
+  margin: 0;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body{
+  height: 100%;
+  width: 100%;
+
+  --black:hsl(240, 6%, 13%);
+  --gray: hsl(240, 9%, 89%);
+
+}
+
+body{
+  display: grid;
+  place-items: center;
+  background-color: rgb(20, 17, 17);
+}
+
+main{
+  background: url(images/background.png);
+  width: 375px;
+  height: 812px;
+}
+
+.container{
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: var(--gray);
+
+}
+
+.avatar{
+  width: 10rem;
+  margin: 11.5rem auto 0;
+  position: relative;
+}
+
+.avatar span{
+  position: absolute;
+  top: -15px;
+  right: -5%;
+  z-index: 1;
+}
+
+.avatar > img{
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);/*bennettfeely.com/clippy/*/
+}
+
+h1{
+  font-family: 'Orbitron', 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+a{
+  color: var(--gray);
+  text-decoration: none;
+  margin-top: 0.25rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: right;
+  /*align-items: center;*/
+}
+
+p{
+  margin-top: 2rem;
+}
+
+p.decoration{ 
+  font-family: 'Press Start 2P', cursive;
+  color: #FD2875;
+}
+
+ul{
+  margin-top: 4rem;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+/*
+  Preloading
+*/
+.loadBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(20, 17, 17);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.preloading {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 4px solid #Fff;
+  animation: loader 2s infinite ease;
+  animation-iteration-count: 2s;
+}
+.animation {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+@keyframes loader {
+  0% { transform: rotate(0deg);}
+  25% { transform: rotate(180deg);}
+  50% { transform: rotate(180deg);}
+  75% { transform: rotate(360deg);}
+  100% { transform: rotate(360deg);}
+}
+@keyframes loader-inner {
+  0% { height: 0%;}
+  25% { height: 0%;}
+  50% { height: 100%;}
+  75% { height: 100%;}
+  100% { height: 0%;}
+}
